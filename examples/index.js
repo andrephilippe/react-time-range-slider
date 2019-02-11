@@ -34,7 +34,7 @@ class App extends React.Component{
 	render() {
 		return(<div style={{width:"300px",margin: "20px"}}>
 			<div className="time-range">
-				<b>Start Time:</b> {this.state.value.start}  <b>End Time:</b> {this.state.value.end}
+				<b>Start Time:</b> {this.state.value.start}  <b>Endd Time:</b> {this.state.value.end}
 			</div>
 			<div className="time-range-slider">
 		    	<TimeRangeSlider
@@ -46,7 +46,7 @@ class App extends React.Component{
 					onChangeStart={this.changeStartHandler}
 					onChangeComplete={this.changeCompleteHandler}
 					onChange={this.timeChangeHandler}
-					step={15}
+					step={30}
 					value={this.state.value}/>
 	    	</div>
 	    </div>);

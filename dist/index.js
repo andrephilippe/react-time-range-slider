@@ -117,6 +117,9 @@ var TimeRangeSlider = function (_Component) {
       var end = this.minuteToTime(value.max);
       var nStart = start.hours + ":" + start.minutes;
       var nEnd = end.hours + ":" + end.minutes;
+      if (this.timeToMinute(nStart) < this.timeToMinute(this.props.minValue) || this.timeToMinute(nEnd) > this.timeToMinute(this.props.maxValue)) {
+        return;
+      }
       if (this.props.format == 12) {
         nStart += " " + start.am_pm;
         nEnd += " " + end.am_pm;
@@ -149,6 +152,7 @@ var TimeRangeSlider = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
+      var step = this.props.step;
       var _props$value = this.props.value,
           start = _props$value.start,
           end = _props$value.end,
@@ -163,7 +167,7 @@ var TimeRangeSlider = function (_Component) {
         onChangeStart: this.onChangeStart.bind(this),
         onChange: this.onChange.bind(this),
         onChangeComplete: this.onChangeComplete.bind(this),
-        step: 15,
+        step: step,
         value: { min: min, max: max } });
     }
   }]);
