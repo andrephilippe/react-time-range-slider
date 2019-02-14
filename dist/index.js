@@ -14,6 +14,8 @@ var _reactInputRange = require('react-input-range');
 
 var _reactInputRange2 = _interopRequireDefault(_reactInputRange);
 
+require('react-input-range/lib/css/index.css');
+
 require('./styles.css');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
